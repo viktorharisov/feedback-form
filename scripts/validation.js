@@ -8,7 +8,6 @@ $("#sendMail").on("click", function () {
 
     var errorMessages = [];
 
-    // Проверка каждого поля
     if (name === "") {
         errorMessages.push("Field Name is required.");
         $("#name").addClass("error-border");
@@ -48,7 +47,6 @@ $("#sendMail").on("click", function () {
         errorMessages.push("You must agree to the terms.");
     }
 
-    // Вывод ошибок или скрытие блока ошибок
     if (errorMessages.length > 0) {
         $("#errorMess").html("<ul><li>" + errorMessages.join("</li><li>") + "</li></ul>");
         $("#errorMess").show();
@@ -56,12 +54,10 @@ $("#sendMail").on("click", function () {
         $("#errorMess").hide();
     }
 
-    // Прерывание отправки формы, если есть ошибки
     if (errorMessages.length > 0) {
         return false;
     }
 
-    // Если ошибок нет, отправляем данные через AJAX
     $.ajax({
         // url: 'mail.php',
         url: 'http://localhost:80',

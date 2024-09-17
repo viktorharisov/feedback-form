@@ -43,6 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 } else {
-    echo "Не POST-запрос"; // Отладочный вывод
+    echo "Не POST-запрос";
 }
 ?>
